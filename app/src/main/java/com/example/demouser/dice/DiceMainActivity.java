@@ -14,10 +14,15 @@ import java.util.Random;
 public class DiceMainActivity extends AppCompatActivity {
 
     //global variables for keeping track of scores
-    private int userOverallScore;
-    private int userTurnScore;
+    private int userOverallScore = 0;
+    private int userTurnScore = 0;
     private int compOverallScore;
     private int compTurnScore;
+
+    //texts with scores and action
+    private TextView actionText;
+    private TextView compScoreText;
+    private TextView userScoreText;
 
     //variables to be used
     private ImageView diceDrawable;
@@ -34,9 +39,9 @@ public class DiceMainActivity extends AppCompatActivity {
 
         //score textboxes
 
-        TextView userScoreText = findViewById(R.id.playerScore);
-        TextView compScoreText = findViewById(R.id.computerScore);
-        TextView actionText = findViewById(R.id.actionText);
+        userScoreText = findViewById(R.id.playerScore);
+        compScoreText = findViewById(R.id.computerScore);
+        actionText = findViewById(R.id.actionText);
 
         //button instantiate
         Button rollButton = findViewById(R.id.rollbutton);
@@ -55,32 +60,40 @@ public class DiceMainActivity extends AppCompatActivity {
                     case 1:
                         //drawable changes to dice1 image
                         diceDrawable.setImageResource(R.drawable.dice1);
-                        //turnScore = 0
+                        userTurnScore = 0;
+                        actionText.setText("Your turn score:" + userTurnScore);
+                        // end turn here, cannot roll again
+
                         break;
                     case 2:
                         //drawable changes to dice2 image
                         diceDrawable.setImageResource(R.drawable.dice2);
-                        //turnScore = turnScore + 2
+                        userTurnScore  = userTurnScore  + 2;
+                        actionText.setText("Your turn score:" + userTurnScore);
                         break;
                     case 3:
                         //drawable changes to dice3 image
                         diceDrawable.setImageResource(R.drawable.dice3);
-                        //turnScore = turnScore + 3
+                        userTurnScore  = userTurnScore  + 3;
+                        actionText.setText("Your turn score:" + userTurnScore);
                         break;
                     case 4:
                         //drawable changes to dice4 image
                         diceDrawable.setImageResource(R.drawable.dice4);
-                        //turnScore = turnScore + 4
+                        userTurnScore  = userTurnScore  + 4;
+                        actionText.setText("Your turn score:" + userTurnScore);
                         break;
                     case 5:
                         //drawable changes to dice5 image
                         diceDrawable.setImageResource(R.drawable.dice5);
-                        //turnScore = turnScore + 5
+                        userTurnScore  = userTurnScore  + 5;
+                        actionText.setText("Your turn score:" + userTurnScore);
                         break;
                     case 6:
                         //drawable changes to dice6 image
                         diceDrawable.setImageResource(R.drawable.dice6);
-                        //turnScore = turnScore + 6
+                        userTurnScore  = userTurnScore  + 6;
+                        actionText.setText("Your turn score:" + userTurnScore);
                         break;
                 }
                 // changes dice drawable to associated image
