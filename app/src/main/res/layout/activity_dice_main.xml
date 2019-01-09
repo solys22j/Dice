@@ -7,7 +7,7 @@
     tools:context=".DiceMainActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/diceImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
